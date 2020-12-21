@@ -1,0 +1,18 @@
+extends Control
+
+var partial_currency = 0.0 
+var time = 0
+var currency
+
+var timeDict = OS.get_time();
+var multiplicador = 1
+
+func _ready():
+	$Timer.start()	
+	$Label.text = str(currency)
+
+func _on_Timer_timeout():
+	time+=1
+	$Timer.start(1)
+	currency += 1 * multiplicador
+	$Timepassed.text = str(time)
